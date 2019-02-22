@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/jscript" src="vue.js"></script>
+</head>
+<body>
+  <div id="app">
+
+  </div>
+<script type="text/javascript">
+
+
+
+  var Test={
+    template:`
+    <div class="">
+      <p>test组件</p>
+    </div>
+    `,
+    data:function(){
+      return{
+        text:'Hello Vue'
+      }
+    },
+    beforeCreate:function(){
+      //zhiq
+      console.log(this.text);
+    },
+    created:function(){
+      //zhih
+      console.log(this.text);
+    },
+    //使用该组件就会触发以上的事件（钩子函数）
+    //created中可以操作数据，并可以实现vue->html的影响
+    beforeMount:function(){
+      //vue装载数据到dom之前
+      console.log(document.body.innerHTML);
+    },
+    mounted:function(){
+      //之后
+      console.log(document.body.innerHTML);
+    }
+
+  }
+
+
+  var App={
+    template:`
+      <div class="">
+        <test></test>
+      </div>
+    `,
+    components:{
+      test:Test
+    },
+    data:function(){
+      return{
+
+      }
+    },
+  }
+
+  new Vue({
+      el: '#app',
+      components: {app: App},
+      template:
+          `<app/>`
+       ,
+  })
+
+</script>
+</body>

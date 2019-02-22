@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/jscript" src="vue.js"></script>
+</head>
+<body>
+<div class="" id="app"></div>
+
+<script type="text/javascript">
+  var App= {
+    template: `
+    <div>
+      <input type="text" v-model="mytext">
+      {{mytext|reverse('')}}
+    </div>`,
+    data:function(){
+      return{
+        mytext:'adasda '
+      }
+    },
+    filters:{
+      reverse:function(datastr){
+        return datastr.split('').reverse().join('')
+      }
+    }
+  }
+
+
+    new Vue({
+        el: '#app',
+        components: {app: App},
+        template:
+            `<app/>`
+         ,
+        data:function () {
+            return{
+            message:'asdasda'
+            }
+        },
+    })
+
+</script>
+</body>

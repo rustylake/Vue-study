@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/jscript" src="vue.js"></script>
+</head>
+<body>
+<div id="app" v-clock ></div>
+<script type="text/javascript">
+var Son={
+  //声明接收参数
+  props:['title'],
+  // 接收父组件的数据
+  template:`
+
+
+  <div>
+    <p>1</p>
+    <ul>
+        <li v-if="rel"> {{title}}</li>
+        <li @click="hhh='+'+hhh" v-else v-html="hhh"></li>
+    </ul>
+    <button @click="change">change</button>
+  </div>`,
+  data:function(){
+    return{
+    rel:true,
+    hhh:'<p>his is warning</p>'
+  }
+  },
+  methods:{
+    change:function(){
+      this.title='+'+this.title+'+'
+      this.rel=!this.rel
+    }
+  }
+}
+
+
+var App={
+  components:{
+    son:Son
+  },
+  template:`
+  <div>
+  <son v-bind:title='xxx'></son>
+  </div>
+  `,
+  data:function(){
+    return {xxx:'手动阀手动阀'}
+  }
+}
+
+  new Vue({
+    el : "#app",
+    data:function(){
+      return{
+      mes:"sfasasf"
+      }
+    },
+    //子组件
+    components:{
+      app:App
+    },
+    template:`<div><app/></div> `
+
+  });
+//向子传递就是v-bind赋值
+
+
+</script>
+</body>
+</html>

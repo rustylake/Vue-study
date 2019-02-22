@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/jscript" src="vue.js"></script>
+    <style media="screen">
+      li{
+        list-style:none;
+        background:red;
+        float:left;
+        width:33%;
+        hight:50px;
+      }
+    </style>
+</head>
+<body>
+<div class="" id="app"></div>
+
+<script type="text/javascript">
+  //九宫格
+    var Myli={
+      //slot是留坑
+      //这是无名坑
+      template:`<li>
+        <slot></slot>
+      </li>`
+    }
+  // 可以传具名坑
+  var Myslot={
+    template:`<li>
+      第一个坑
+      <slot name='one'></slot>
+      <hr/>
+      第二个坑
+      <slot name='two'></slot>
+    </li>`
+  }
+    Vue.component('my-li',Myli);
+    Vue.component('My-slot',Myslot);
+
+
+    var App={
+      template:`
+    <div >
+        <my-li><p>可以由父组件传递dom</p></my-li>
+        <my-li>
+          <div><p>可传复杂dom</p>
+          </div>
+        </my-li>
+        <My-slot>
+          <h1 slot='one'>diyi</h1>
+          <h1 slot='two'>dier</h1>
+        </My-slot>
+    </div>
+      `,
+      data:function(){
+        return{
+
+        }
+      },
+    }
+
+    new Vue({
+        el: '#app',
+        components: {app: App},
+        template:
+            `<app/>`
+         ,
+        data:function () {
+            return{
+            message:'asdasda'
+            }
+        },
+    })
+
+</script>
+</body>
