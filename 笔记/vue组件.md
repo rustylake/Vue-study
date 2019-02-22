@@ -10,14 +10,14 @@
 
   ```
   // 定义一个名为 button-counter 的新组件
-Vue.component('button-counter', {
-  data: function () {
-    return {
-      count: 0
-    }
-  },
+  Vue.component('button-counter', {
+    data: function () {
+      return {
+       count: 0
+      }
+    },
   template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-})
+  })
   ```
   > 组件是可复用的vue实例，且有名字（在这个例子中是button-counter）              
   可以在通过new Vue创建的实例中把它当作自定义元素使用
