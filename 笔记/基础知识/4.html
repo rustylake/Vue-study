@@ -16,7 +16,9 @@
   var Test={
     template:`
     <div class="">
-      <p>test组件</p>
+      <p @click="text=text+1">test组件</p>
+      <button @click="console.log(text);">000</button>
+
     </div>
     `,
     data:function(){
@@ -24,6 +26,8 @@
         text:'Hello Vue'
       }
     },
+    //使用该组件就会触发以上的事件（钩子函数）
+    //created中
     beforeCreate:function(){
       //zhiq
       console.log(this.text);
@@ -32,16 +36,26 @@
       //zhih
       console.log(this.text);
     },
-    //使用该组件就会触发以上的事件（钩子函数）
-    //created中可以操作数据，并可以实现vue->html的影响
+    //可以操作数据，并可以实现vue->html的影响
     beforeMount:function(){
-      //vue装载数据到dom之前
-      console.log(document.body.innerHTML);
+      //vue启动之前的dom，只执行一次
+      console.log(document.getElementsByTagName("div").innerHTML);
     },
     mounted:function(){
       //之后
-      console.log(document.body.innerHTML);
-    }
+        console.log(document.getElementsByTagName("div").innerHTML);
+    },
+    beforeUpdate:function(){
+      //获取原dom
+          console.log(document.getElementsByTagName("div").innerHTML);
+    },
+    updated:function(){
+      //新dom
+          console.log(document.getElementsByTagName("div").innerHTML);
+    },
+    // destroy销毁
+    // activated激活
+    // 被keep-alive组件包裹
 
   }
 

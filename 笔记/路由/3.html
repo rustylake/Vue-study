@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vue路由</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <script type="text/javascript" src="vue-router.js"></script>
+  </head>
+  <body>
+    <div id="app">
+0
+    </div>
+    <script type="text/javascript">
+
+    var Login={template:` <div>denglu</div> `};
+    var Logout={template:` <div>dengc</div> `};
+    var Register={template:` <div>zhuc</div> `};
+
+    //安装插件
+    Vue.use(VueRouter);
+
+    //创建路由对象
+    var router = new VueRouter({
+      routes:[
+        {path:'/ogin',component:Login},
+        {path:'/logout',component:Logout},
+        //相当于制定变量名
+        //命名路由
+        { name:'register' ,path:'/register',component:Register},
+        ]
+      })
+
+    var App={
+      template:`<div> 2
+        <router-link to="/logout">登录</router-link>
+        //锚点值关联到组件上
+        <router-link :to="{name:'register'}">注册</router-link>
+        //命名路由：要加：指定to，否则当作字符串运算
+        <router-view></router-view>4
+      </div>`,
+    }
+
+    new Vue({
+      el:"#app",
+      router:router,
+      components:{
+        app:App
+      },
+      template:`<div>1<app/></div>`,
+    })
+
+
+    </script>
+  </body>
+</html>

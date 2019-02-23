@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vue路由</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <script type="text/javascript" src="vue-router.js"></script>
+  </head>
+  <body>
+    <div id="app">
+0
+    </div>
+    <script type="text/javascript">
+
+    var Login={template:` <div>denglu</div> `}
+
+    //安装插件
+    Vue.use(VueRouter);
+
+    //创建路由对象
+    var router = new VueRouter({
+      routes:[
+        {path:'/ogin',component:Login}]
+        //一条路由规则
+
+      //配置路由对象
+    });
+
+    //将路由对象关联到实例中
+    var App={
+      template:`<div> 2
+        <router-view>3</router-view>4
+      </div>`,
+    }
+
+    new Vue({
+      el:"#app",
+      router:router,
+      components:{
+        app:App
+      },
+      template:`<div>1<app/></div>`,
+    })
+
+
+    </script>
+  </body>
+</html>

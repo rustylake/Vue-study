@@ -206,3 +206,52 @@
     }
 
     ```
+  + 补充
+    + 获取dom元素
+    > 在组件的dom部分，在任意的标签中  写上ref="xxx"
+    >通过组件对象this.$refs.xxx 获取元素
+
+    ```
+    var App={
+      template:`
+      <div>
+        <button ref="btn">666</button>
+      </div>
+      `
+    }
+    ```
+      + $属性：$refs 获取组件内的元素
+      + $parent 获取当前组件对象的父组件
+      + $children 获取子组件
+      + $root 获取new Vue的实例 vm
+      + $el 组件对象的dom
+  + 给dom添加事件的特殊情况
+
+    ```
+    var App={
+      template:`
+      <div>
+        <input type="text" v-if="isshow" ref="ppp">
+        <button ref="btn">666</button>
+      </div>
+      `,
+      data:function(){
+        return{
+          isshow:false
+        },
+      mounted:function(){
+        //装载数据之后
+        //显示元素，并给与焦点
+        this.isshow=!this.isshow;
+        //所有代码执行完毕以后vue才会进行dom操作
+
+        this.$refs.ppp.focus();    //所以这句会报错
+
+        //下面这句话在vue渲染完毕后才会执行
+        this.$nextTick(function(){
+            this.$refs.ppp.focus();
+          })
+        }
+      }
+    }
+    ```
