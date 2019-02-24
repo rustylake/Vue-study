@@ -6,6 +6,7 @@ import router from './router'
 //配置mintui
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import './assets/css/global.css'
 
 Vue.config.productionTip = false
 
@@ -17,3 +18,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+

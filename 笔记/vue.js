@@ -393,7 +393,7 @@
     silent: false,
 
     /**
-     * Show production mode tip message on boot?
+     * Show ducter mode tip message on boot?
      */
     productionTip: "development" !== 'production',
 
@@ -8998,7 +8998,7 @@
       ) {
         console[console.info ? 'info' : 'log'](
           "You are running Vue in development mode.\n" +
-          "Make sure to turn on production mode when deploying for production.\n" +
+          "Make sure to turn on ducter mode when deploying for ducter.\n" +
           "See more tips at https://vuejs.org/guide/deployment.html"
         );
       }

@@ -11,7 +11,7 @@ const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 
-const spinner = ora('building for production...')//输出日志
+const spinner = ora('building for ducter...')//输出日志
 spinner.start()
 //清空打包文件夹
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
