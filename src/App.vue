@@ -1,13 +1,37 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <mt-header fixed title="固定在顶部"></mt-header>
+
+    <mt-tabbar v-model="selected">
+      <mt-tab-item id="产品介绍">
+        <img slot="icon" src="../static/logo.png">
+        产品介绍
+      </mt-tab-item>
+      <mt-tab-item id="民俗民宿">
+        <img slot="icon" src="../static/logo.png">
+        民俗民宿
+      </mt-tab-item>
+      <mt-tab-item id="志愿教师">
+        <img slot="icon" src="../static/logo.png">
+        志愿教师
+      </mt-tab-item>
+      <mt-tab-item id="捐助招募">
+        <img slot="icon" src="../static/logo.png">
+        捐助招募
+      </mt-tab-item>
+    </mt-tabbar>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data:function () {
+   return{
+     selected:''
+   }
+  }
 }
 </script>
 
