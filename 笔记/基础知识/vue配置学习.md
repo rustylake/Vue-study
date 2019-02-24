@@ -2,6 +2,8 @@
 > **https：//unpkg.com/vue/dist/vue.js**
 ---
 + 带min的是压缩版本
++ 带runtime的是运行环境
++ 
 > vue实例
 ```
 new Vue({

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <mt-header  title="固定在顶部"></mt-header>
+    <mt-header  title="">aa</mt-header>
     <router-view></router-view>
     <mt-tabbar v-model="selected">
       <mt-tab-item id="ducter">
@@ -8,15 +8,15 @@
         产品介绍
       </mt-tab-item>
       <mt-tab-item id="pro">
-        <img slot="icon" src="assets/img/logo.png">
+        <img slot="icon" src="../static/house.png">
         民俗民宿
       </mt-tab-item>
       <mt-tab-item id="teacher">
-        <img slot="icon" src="assets/img/logo.png">
+        <img slot="icon" src="../static/teacher.png">
         志愿教师
       </mt-tab-item>
       <mt-tab-item id="memony">
-        <img slot="icon" src="assets/img/logo.png">
+        <img slot="icon" src="../static/love.png">
         捐助招募
       </mt-tab-item>
     </mt-tabbar>
