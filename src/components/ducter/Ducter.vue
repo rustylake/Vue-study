@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <!--滚动图片-->
     <mt-swipe :auto="4000" class="mt-swipe">
       <mt-swipe-item>
@@ -17,7 +17,9 @@
     <!--产品列表-->
     <div>
       <theUl>
-        <theLi v-for="item in items" v-text="items.tilte">{{items.title}}</theLi>
+        <theLi v-for="item in items" >
+          <router-link :to="{name:item.href}"></router-link>
+        </theLi>
       </theUl>
     </div>
   </div>
@@ -30,11 +32,11 @@
       return{
         items:[
           {
-            tilte:'aaa',
+            tilte:'赣南脐橙',
             href:'',
           },
           {
-            tilte:'sss',
+            tilte:'只有橙子',
             href:''
           }
         ]
@@ -51,4 +53,5 @@
   img {
     width: 100%;
   }
+
 </style>

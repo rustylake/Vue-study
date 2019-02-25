@@ -8,7 +8,13 @@
 
 <script>
     export default {
-        name: "pro"
+        name: "pro",
+        data:function () {
+          return{
+            value:'',
+
+          }
+        }
     }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
     <ul>
+
       <slot></slot>
     </ul>
 </template>
@@ -16,5 +17,7 @@
 </script>
 
 <style scoped>
-
+  ul{
+    padding: 10px 0;
+  }
 </style>
