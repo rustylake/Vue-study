@@ -18,7 +18,9 @@
     <div>
       <theUl>
         <theLi v-for="item in items" >
-          <router-link :to="{name:item.href}"></router-link>
+          <router-link :to="{name:item.router}">
+            {{item.tilte}}
+          </router-link>
         </theLi>
       </theUl>
     </div>
@@ -33,7 +35,10 @@
         items:[
           {
             tilte:'赣南脐橙',
-            href:'',
+            router:{
+              name:'pro_list',
+              path:'/ducter/:this.title'
+            },
           },
           {
             tilte:'只有橙子',

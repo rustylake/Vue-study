@@ -21,7 +21,7 @@
   background: #ffffff;
   list-style: none;
   float: top;
-  width: 100%;
+  /*width: 100%;*/
   text-align: left;
   font-size: 20px;
   height: 65px;
