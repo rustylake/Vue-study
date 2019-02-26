@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <mt-header  title="">aa</mt-header>
+    <mt-header  title="固定在顶部"></mt-header>
     <router-view></router-view>
     <mt-tabbar v-model="selected">
       <mt-tab-item id="ducter">

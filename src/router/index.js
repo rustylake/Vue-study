@@ -5,6 +5,8 @@ import Pro from '@/components/pro/Pro'
 import Ducter from '@/components/ducter/Ducter'
 import Teacher from '@/components/teacher/Teacher'
 
+import contain from '@/components/pro/contain'
+
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +35,11 @@ export default new Router({
       path:'/teacher',
       name:'teacher',
       component:Teacher,
+    },
+    {
+      path:'/pro/contain',
+      name:'contain',
+      component:contain,
     }
   ]
 })
